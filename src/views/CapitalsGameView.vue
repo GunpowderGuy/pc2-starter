@@ -23,6 +23,11 @@ export default {
     },
     adivinarCapital() {
       //TODO: implementar. verifica se la adivinanza es correcta.
+      if(capital == this.country.capital){
+        puntaje++
+      }
+     
+      this.$router.push({name: 'CapitalsGameView'}) 
     },
   },
 };
@@ -38,7 +43,18 @@ export default {
     <button @click="adivinarCapital">Adivina!</button>
     <div class="countries-container">
       <!--TODO: CREAR EL COMPONENTE PARA VISUALIZAR EL PAIS-->
-    </div>
+     <div countries="city">
+    <h1> Pais {{ country_name  || 'No props passed yet' }}</h1>
+    <p> Estado{{ state_name  || 'No props passed yet' }}</p>
+    <p> Latitud {{ latitude || 'No props passed yet' }}</p>
+    <p> Longitud {{ longitude  || 'No props passed yet' }}</p>
+    <img
+      width="200"
+      height="200"
+      v-bind:src=' "https://countryflagsapi.com/png/"+ country.code '
+    />
+  </div>
+  </div>
   </div>
 </template>
 

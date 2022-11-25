@@ -20,6 +20,7 @@ export default {
 
 <template>
   <div class="cities-container">
+  
     <CityComponent
       v-for="(city, index) in cities"
       :key="index"

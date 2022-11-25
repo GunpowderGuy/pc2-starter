@@ -16,22 +16,27 @@ export default {
   created() {
     this.countries = countries;
   },
+  computed: {
+    countriesFiltrados() {
+      this.countries.filter((x)=> this.paisActual == x['name'])  
+    }
+  },
   methods: {
     filtrarPais(e) {
       // TODO: Implementar. filtra el país de acuerdo al valor del input. Hint: Recuerda la función filter
+
       const filtro = e.target.value;
+      this.countries.filter((x)=> x.nombre == this.paisActual)
     },
   },
 };
 </script>
 
 <template>
+  <h1>pe {{paisActual}}</h1>
   <div class="countries">
-    <input
-      placeholder="Busca un país"
-      :value="this.paisActual"
-      @input="filtrarPais"
-    />
+   
+    <input v-model="paisActual">
   </div>
   <div class="countries-container">
     <!--//TODO: pasar una propiedad para determinar si al componente se le puede hacer click -->

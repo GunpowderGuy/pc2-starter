@@ -19,9 +19,14 @@ export default {
   <div
   >
   <!--TODO: Poblar el HTML con las propiedades. Usar https://countryflagsapi.com/png/${code}-->
+  <h1>{{name}}</h1>
+   <p>Capital: {{capital}}</p>
+   <p>Moneda: {{currency_name}}</p>
+   <p>Region: {{region}}</p>
   <img
       width="200"
       height="200"
+      v-bind:src=' "https://countryflagsapi.com/png/"+code '
     />
   </div>
 </template>
